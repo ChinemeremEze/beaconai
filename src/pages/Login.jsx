@@ -15,7 +15,7 @@ export default function Login() {
     <div className="container mx-auto px-4 py-16 flex justify-center items-center min-h-screen">
       <div className="w-full max-w-md">
         <div>
-          <h2 className="text-2xl font-bold text-center">Log In to beacon.ai</h2>
+          <h2 className="text-2xl font-bold text-center">Log In to chika.ai</h2>
         </div>
         <div className='p-6'>
           <form onSubmit={handleSubmit} className="space-y-4">

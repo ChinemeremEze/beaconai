@@ -61,7 +61,7 @@ export default function Pricing() {
                     </li>
                   ))}
                 </ul>
-                <button className="w-full bg-pink-600 hover:bg-pink-700">Get Started</button>
+                <button className="w-full bg-pink-600 hover:bg-pink-700">{t('getStarted')}</button>
               </div>
             </div>
           ))}

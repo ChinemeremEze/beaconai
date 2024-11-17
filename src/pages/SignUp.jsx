@@ -15,7 +15,7 @@ export default function SignUp() {
     <div className="container mx-auto px-4 py-16 flex justify-center items-center min-h-screen">
        <div className="bg-white w-full max-w-md shadow-lg rounded-lg overflow-hidden border border-gray-200">
         <div className="px-6 py-4 border-b border-gray-200">
-          <h2 className="text-2xl font-bold text-gray-900 text-center">Sign Up for beacon.ai</h2>
+          <h2 className="text-2xl font-bold text-gray-900 text-center">Sign Up for chika.ai</h2>
         </div>
         <div className='p-6'>
           <form onSubmit={handleSubmit} className="space-y-4">
