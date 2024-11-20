@@ -5,38 +5,64 @@ import CountUp from 'react-countup';
 import { motion, useAnimation, useInView} from 'framer-motion'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { CheckCircle, Users, Briefcase, TrendingUp, FileText, Search, Mail, Calendar, Database, Filter } from 'lucide-react'
+import { CheckCircle, Users, Briefcase, TrendingUp, FileText, Search, Mail, Calendar, Database, Filter, Send, HeartHandshake } from 'lucide-react'
 import ContactUs from '../components/ContactUs'
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet-async';
 import AnimatedText from '../components/AnimatedText';
+
+// const features = [
+//   { icon: <Users className="h-6 w-6" />, title: 'Talent Sourcing', description: 'We’ll analyze hundreds of profiles weekly and reach out to 50-100 top matches' },
+//   { icon: <Send className="h-6 w-6" />, title: 'Personalised Outreach', description: 'We leverage AI-driven, personalized templates proven to engage candidates.' },
+//   { icon: <HeartHandshake className="h-6 w-6" />, title: 'Streamlined Communication', description: 'When candidates show interest, we’ll manage all the communication for you.' },
+//   { icon: <Calendar className="h-6 w-6" />, title: 'Instant Scheduling', description: 'Simply approve a candidate with a click, and your Calendly link will be sent to them. for an interview' },
+// ]
+
+// const testimonials = [
+//   { name: 'Sarah Johnson', role: 'HR Manager', company: 'Open Table', content: "Chika.ai has revolutionized our hiring process. We continue to find amazing talents in record time at less the industry price!" },
+//   { name: 'Isaac Emeteveke', role: 'CEO', company: 'CloudGenius', content: "Easily one of the best business decisions I’ve made at my startup. I spent months searching for a founding engineer, and within just a week of using Chika AI, I was able to hire the perfect one." },
+//   { name: 'Emily Rodriguez', role: 'Talent Acquisition', company: 'GrowthCo', content: 'I tried a ton of AI-recruiting platforms, tried LinkedIn, and it was all just so much noise. Then I worked with Wellfound’s expert sourcers — they are so prompt and polite and saved me so much time and money. I just wanted the good candidates and that’s what I got.' },
+// ]
+// const howItWorksSteps = [
+//   { icon: <FileText className="h-12 w-12 text-pink-600" />, title: 'Create Campaign', description: 'Clients create a campaign with job descriptions for an open role they are hiring for.' },
+//   { icon: <Search className="h-12 w-12 text-pink-600" />, title: 'AI Analysis', description: 'We analyze their job description using AI and get A+ prospects that match their criteria.' },
+//   { icon: <Mail className="h-12 w-12 text-pink-600" />, title: 'Outreach', description: 'We create outreach sequences that send out messages to these candidates via email.' },
+//   { icon: <Calendar className="h-12 w-12 text-pink-600" />, title: 'Meeting Setup', description: 'When a candidate is approved by our client, a meeting is set up with both parties.' },
+// ]
+// const stats = [
+//   { value: '500', label: 'Candidate Pool', icon: Database },
+//   { value: '240', label: 'Advanced Sourcing Filters', icon: Filter },
+//   { value: '700', label: 'Interviews Booked', icon: Calendar },
+// ]
+
 const features = [
-  { icon: <Users className="h-6 w-6" />, title: 'Talent Sourcing', description: 'Find top-tier candidates effortlessly' },
-  { icon: <Briefcase className="h-6 w-6" />, title: 'Job Matching', description: 'AI-powered matching for perfect fits' },
-  { icon: <CheckCircle className="h-6 w-6" />, title: 'Streamlined Hiring', description: 'Accelerate your hiring process' },
-  { icon: <TrendingUp className="h-6 w-6" />, title: 'Analytics', description: 'Data-driven insights for better decisions' },
-]
+  { icon: <Users className="h-6 w-6" />, title: 'features.talentSourcing', description: 'features.talentSourcingDesc' },
+  { icon: <Send className="h-6 w-6" />, title: 'features.personalisedOutreach', description: 'features.personalisedOutreachDesc' },
+  { icon: <HeartHandshake className="h-6 w-6" />, title: 'features.streamlinedCommunication', description: 'features.streamlinedCommunicationDesc' },
+  { icon: <Calendar className="h-6 w-6" />, title: 'features.instantScheduling', description: 'features.instantSchedulingDesc' },
+];
 
 const testimonials = [
-  { name: 'Sarah Johnson', role: 'HR Manager', company: 'TechCorp', content: 'Chika.ai has revolutionized our hiring process. We\'ve found amazing talent in record time!' },
-  { name: 'Michael Chen', role: 'CEO', company: 'StartupX', content: 'The AI-powered matching is incredible. It\'s like the platform knows exactly what we\'re looking for.' },
-  { name: 'Emily Rodriguez', role: 'Talent Acquisition', company: 'GrowthCo', content: 'The analytics provided by Chika.ai have helped us make data-driven decisions in our recruitment strategy.' },
-]
+  { name: 'Sarah Johnson', role: 'HR Manager', company: 'Open Table', content: 'testimonials.sarahContent' },
+  { name: 'Isaac Emeteveke', role: 'CEO', company: 'CloudGenius', content: 'testimonials.isaacContent' },
+  { name: 'Emily Rodriguez', role: 'Talent Acquisition', company: 'GrowthCo', content: 'testimonials.emilyContent' },
+];
+
 const howItWorksSteps = [
-  { icon: <FileText className="h-12 w-12 text-pink-600" />, title: 'Create Campaign', description: 'Clients create a campaign with job descriptions for an open role they are hiring for.' },
-  { icon: <Search className="h-12 w-12 text-pink-600" />, title: 'AI Analysis', description: 'We analyze their job description using AI and get A+ prospects that match their criteria.' },
-  { icon: <Mail className="h-12 w-12 text-pink-600" />, title: 'Outreach', description: 'We create outreach sequences that send out messages to these candidates via email.' },
-  { icon: <Calendar className="h-12 w-12 text-pink-600" />, title: 'Meeting Setup', description: 'When a candidate is approved by our client, a meeting is set up with both parties.' },
-]
+  { icon: <FileText className="h-12 w-12 text-pink-600" />, title: 'howItWorks.createCampaign', description: 'howItWorks.createCampaignDesc' },
+  { icon: <Search className="h-12 w-12 text-pink-600" />, title: 'howItWorks.aiAnalysis', description: 'howItWorks.aiAnalysisDesc' },
+  { icon: <Mail className="h-12 w-12 text-pink-600" />, title: 'howItWorks.outreach', description: 'howItWorks.outreachDesc' },
+  { icon: <Calendar className="h-12 w-12 text-pink-600" />, title: 'howItWorks.meetingSetup', description: 'howItWorks.meetingSetupDesc' },
+];
+
 const stats = [
-  { value: '500', label: 'Candidate Info Available', icon: Database },
-  { value: '240', label: 'Advanced Sourcing Filters', icon: Filter },
-  { value: '700', label: 'Booked Interviews', icon: Calendar },
-]
+  { value: '500', label: 'stats.candidatePool', icon: Database },
+  { value: '240', label: 'stats.advancedSourcingFilters', icon: Filter },
+  { value: '700', label: 'stats.interviewsBooked', icon: Calendar },
+];
 const partnerLogos = [
   { name: 'LinkedIn', logo: 'https://download.logo.wine/logo/LinkedIn/LinkedIn-Logo.wine.png?height=50&width=120&text=TechCorp&fontColor=%23fff&backgroundColor=%23FF69B4' },
-  { name: 'Indeed', logo: '/indeed.svg?height=50&width=120&text=TechCorp&fontColor=%23fff&backgroundColor=%23FF69B4' },
+  { name: 'Indeed', logo: '/images/indeed.svg?height=50&width=120&text=TechCorp&fontColor=%23fff&backgroundColor=%23FF69B4' },
   { name: 'Wellfound', logo: 'https://www.newsweek.com/vault/wp-content/uploads/2023/12/wellfound-lockup-black.png?height=50&width=120&text=TechCorp&fontColor=%23fff&backgroundColor=%23FF69B4' },
   { name: 'Github', logo: 'https://cdn.worldvectorlogo.com/logos/github-2.svg?height=50&width=120&text=TechCorp&fontColor=%23fff&backgroundColor=%23FF69B4' },
   { name: 'Google', logo: 'https://www.svgrepo.com/show/303183/google-2015-logo.svg?height=50&width=120&text=TechCorp&fontColor=%23fff&backgroundColor=%23FF69B4' },
@@ -107,14 +133,13 @@ export default function Home () {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h1>{t('welcome')}</h1>
+            {/* <h1>{t('welcome')}</h1> */}
             <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-              <span className="block">Find Your Perfect</span>
-              <span className="block text-pink-600">Talent Match</span>
+              <span className="block">{t("homeBannerTitle1")}</span>
+              <span className="block text-pink-600">{t("homeBannerTitle2")}</span>
             </h1>
-            <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl">
-              Chika.ai uses cutting-edge AI to connect you with top talent, streamlining your hiring process and ensuring the perfect fit for your team.streamlining your hiring process and ensuring the perfect fit for your team.
-            </p>
+            {/* <p>Your AI-powered talent sourcer that goes beyond surface-level keyword match. We aggregate billions of data points to fill in candidate profiles with missing skills and insights about their work experience, so you never miss a fit.</p> */}
+            <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl">{t("homeBannerMessage")}</p>
             <div className="mt-5 sm:mt-8 sm:flex sm:justify-center">
               <div className="rounded-md shadow">
                 <Button
@@ -137,11 +162,11 @@ export default function Home () {
       </section>
 
       {/* Video Section */}
-      <section className="py-20 bg-gradient-to-r from-pink-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className='mb-8 text-pink-500 text-center font-semi-bold text-xl tracking-wide'>HIRING SO SIMPLE, IT FEELS LIKE MAGIC</p>
-          <h1 className='text-center text-6xl tracking-wide font-extrabold pt-8'>Meet Chika.ai</h1>
-          <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-4 tracking-wide py-8">Source smarter, hire faster</h2>
+      <section className="py-12 bg-gradient-to-r from-pink-50 to-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className='mb-8 text-pink-400 text-center font-bold text-xl tracking-wide'>{t('videoHeading')}</p>
+          <h1 className='text-center text-6xl tracking-wide font-extrabold pt-8'>{t('videoMainTitle')}</h1>
+          <h2 className="text-2xl font-extrabold text-gray-900 text-center mb-4 tracking-wide py-8">{t('videoSubHeading')}</h2>
           <div className="aspect-w-16 aspect-h-9 h-[600px]">
             <iframe 
               src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
@@ -151,13 +176,15 @@ export default function Home () {
               className="w-full h-full rounded-lg shadow-lg"
             ></iframe>
           </div>
+          <p className="text-xl text-gray-900 text-center mb-4 tracking-wide py-8" >
+            {t('videoMessage1')} <span className='font-bold'>{t('videoMessage2')}</span>{t('videoMessage3')}</p>
         </div>
       </section>
 
        {/* Partner Logos */}
         <section className="w-full py-12 bg-white">
           <div className="w-[60%] mx-auto relative overflow-hidden">
-            <h2 className="text-2xl font-semibold text-gray-900 text-center mb-8 pb-12">Connect with Talents from the worlds largest professional network</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 text-center mb-8 pb-12">{t('logosHeader')}</h2>
             <div className="relative opacity-50" ref={logoContainerRef}>
               <motion.div
                 className="flex space-x-8"
@@ -179,7 +206,7 @@ export default function Home () {
             {/* Our Inpact */}
           <section className="w-full py-20 to-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">Our Impact in Numbers</h2>
+            <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">{t('impactTitle')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {stats.map((stat, index) => (
                 <motion.div
@@ -196,9 +223,9 @@ export default function Home () {
                       duration={2} // Animation duration for the counter
                       separator="," // Add commas to large numbers
                     />
-                    {stat.label.startsWith("C")? "m+" : "+"}
+                    {t(stat.label.startsWith("C")? "m" : "+")}
                   </h3>
-                  <p className="text-lg text-gray-600">{stat.label}</p>
+                  <p className="text-lg text-gray-600">{t(stat.label)}</p>
                 </motion.div>
               ))}
             </div>
@@ -208,7 +235,7 @@ export default function Home () {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-12">
-            Why Choose Chika.ai?
+            {t('whyChika')}
           </h2>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {features.map((feature, index) => (
@@ -225,8 +252,8 @@ export default function Home () {
                     <div className="flex items-center justify-center h-12 w-12 rounded-md bg-pink-500 text-white mb-4">
                       {feature.icon}
                     </div>
-                    <h3 className="text-lg font-medium text-gray-900 mb-2">{feature.title}</h3>
-                    <p className="text-base text-gray-500">{feature.description}</p>
+                    <h3 className="text-lg font-medium text-gray-900 mb-2">{t(feature.title)}</h3>
+                    <p className="text-base text-gray-500">{t(feature.description)}</p>
                   </CardContent>
                 </Card>
 
@@ -246,7 +273,7 @@ export default function Home () {
       <section className="py-20 px-4 sm:px-6 lg:px-8 border-y-2 border-pink-50">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-12">
-            What Our Clients Say
+            {t('testimonialTitle')}
           </h2>
           <motion.div
             key={currentTestimonial}
@@ -256,14 +283,14 @@ export default function Home () {
           >
             <Card className="max-w-3xl mx-auto">
               <CardContent className="p-8">
-                <p className="text-lg text-gray-600 mb-4">"{testimonials[currentTestimonial].content}"</p>
+                <p className="text-lg text-gray-600 mb-4">"{t(testimonials[currentTestimonial].content)}"</p>
                 <div className="flex items-center">
                   <div className="flex-shrink-0">
                     <img className="h-10 w-10 rounded-full" src={`https://api.dicebear.com/6.x/initials/svg?seed=${testimonials[currentTestimonial].name}`} alt={testimonials[currentTestimonial].name} />
                   </div>
                   <div className="ml-3">
-                    <p className="text-sm font-medium text-gray-900">{testimonials[currentTestimonial].name}</p>
-                    <p className="text-sm text-gray-500">{testimonials[currentTestimonial].role}, {testimonials[currentTestimonial].company}</p>
+                    <p className="text-sm font-medium text-gray-900">{t(testimonials[currentTestimonial].name)}</p>
+                    <p className="text-sm text-gray-500">{t(testimonials[currentTestimonial].role)}, {t(testimonials[currentTestimonial].company)}</p>
                   </div>
                 </div>
               </CardContent>

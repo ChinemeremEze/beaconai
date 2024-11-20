@@ -11,6 +11,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { AlertCircle } from 'lucide-react'
 import { useAuthMutation } from '../hooks/useAuthMutation';
 import CampaignModal from '../modals/CampaignModal';
+
+const CAMPAIGN_PRICES = {
+    basic: import.meta.env.VITE_APP_BASIC_CAMPAIGN_PRICE,
+    senior: import.meta.env.VITE_APP_SENIOR_CAMPAIGN_PRICE,
+    executive: import.meta.env.VITE_APP_EXECUTIVE_CAMPAIGN_PRICE
+}
+
 const CAMPAIGN_AMOUNTS = {
     basic: 300000,
     senior: 700000,
@@ -47,6 +54,10 @@ export default function CreateCampaign() {
         return (CAMPAIGN_AMOUNTS[campaignType]);
     }, [campaignType]);
 
+    const priceId = useMemo(() => {
+        return (CAMPAIGN_PRICES[campaignType]);
+    }, [campaignType]);
+
     const { mutate: createCampaignMutation, isLoading: isSubmitting } = useAuthMutation(
         ['createCampaign'],
         'http://localhost:3000/api/payments/create-payment-intent'
@@ -67,6 +78,7 @@ export default function CreateCampaign() {
         ['Compensation']: '',
         ['Show Compensation']: 'Yes',
         ['Responsibilities']: '',
+        ['Ideal Hire']: '',
         ['Company Info']: '',
         ['Momentum']: '',
         ['Team']: '',
@@ -108,12 +120,13 @@ export default function CreateCampaign() {
         formData['Status'] = "Active";
         formData["Client Name"] = user.name
         formData["Client ID"] = user.sub
+        formData["priceId"] = priceId
 
         createCampaignMutation(formData, {
             onSuccess: (data) => {
-                const { client_secret } = data;
+                const { client_secret, campaignType, amount } = data;
                 if (client_secret) {
-                    navigate('/payment', { state: { client_secret } });
+                    navigate('/payment', { state: { client_secret, campaignType, amount } });
                 } else {
                     setError('Failed to retrieve client secret. Please try again.');
                 }
@@ -250,6 +263,13 @@ export default function CreateCampaign() {
                         <Label htmlFor="Responsibilities">Responsibilities</Label>
                         <Textarea id="Responsibilities" name="Responsibilities" value={formData.Responsibilities} onChange={handleInputChange} required />
                     </div>
+
+                    {campaignType !== 'basic' && (
+                        <div>
+                            <Label htmlFor="Ideal Hire">Describe your Ideal Hire  </Label>
+                            <Textarea id="Ideal Hire" name="Ideal Hire" value={formData["Ideal Hire"]} onChange={handleInputChange} />
+                        </div>
+                    )}
             
                     {campaignType === 'executive' && (
                         <>

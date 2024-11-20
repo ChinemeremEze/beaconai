@@ -57,7 +57,7 @@ export function Navbar() {
       <div className="flex justify-between h-16">
         <div className="flex">
           <Link to="/" className="flex-shrink-0 flex items-center">
-            <img className="h-8 w-auto" src="/logo.svg" alt="chika.ai" />
+            <img className="h-8 w-auto" src="/images/pinkLogo.png" alt="chika.ai" />
           </Link>
         </div>
         <div className="hidden sm:ml-6 sm:flex sm:items-center">

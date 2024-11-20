@@ -1,7 +1,160 @@
 {
     "welcome": "Welcome to Chika.ai",
+    "homeBannerTitle1": "Automate Your",
+    "homeBannerTitle2": "Sourcing With AI",
+    "homeBannerMessage": "Using AI, we streamline your hiring process by identifying the perfect candidates for your role, reaching out to them with personalized templates, managing all communication, and enabling instant interview scheduling with candidates you approve.",
     "description": "Find your perfect talent match with cutting-edge AI.",
     "scheduleDemo": "Schedule a demo",
-    "getStarted": "Get Started"
-
+    "getStarted": "Get Started",
+    "videoHeading": "HIRING HAS NEVER BEEN SO EASY",
+    "videoMainTitle": "Introducing Chika.ai",
+    "videoSubHeading": "The modern way to source talents",
+    "videoMessage1": "Simply describe your ideal hire, and we'll have",
+    "videoMessage2": "qualified & interested candidates ",
+    "videoMessage3": "booked on your calendar by the next day. It’s that easy.",
+    "logosHeader": "Connect with Talents from the worlds largest professional network",
+    "impactTitle": "Our Impact in Numbers",
+    "impactLabel1": "Candidate Pool",
+    "impactLabel2": "Advanced Sourcing Filters",
+    "impactLabel3": "Interviews Booked",
+    "whyChika": "Why Choose Chika.ai?",
+    "builtBy": "Built by recruiters for",
+    "builtFor": ["recruiters", "head hunters", "businesses", "agencies", "startups"],
+    "testimonialTitle": "What Our Clients Say",
+    "features": {
+        "talentSourcing": "Talent Sourcing",
+        "talentSourcingDesc": "We’ll analyze hundreds of profiles weekly and reach out to 50-100 top matches.",
+        "personalisedOutreach": "Personalised Outreach",
+        "personalisedOutreachDesc": "We leverage AI-driven, personalized templates proven to engage candidates.",
+        "streamlinedCommunication": "Streamlined Communication",
+        "streamlinedCommunicationDesc": "When candidates show interest, we’ll manage all the communication for you.",
+        "instantScheduling": "Instant Scheduling",
+        "instantSchedulingDesc": "Simply approve a candidate with a click, and your Calendly link will be sent to them for an interview."
+    },
+    "testimonials": {
+        "sarahContent": "Chika.ai has revolutionized our hiring process. We continue to find amazing talents in record time at less the industry price!",
+        "isaacContent": "Easily one of the best business decisions I’ve made at my startup. I spent months searching for a founding engineer, and within just a week of using Chika AI, I was able to hire the perfect one.",
+        "emilyContent": "I tried a ton of AI-recruiting platforms, tried LinkedIn, and it was all just so much noise. Then I worked with Wellfound’s expert sourcers — they are so prompt and polite and saved me so much time and money. I just wanted the good candidates and that’s what I got."
+    },
+    "howItWorksOverview": {
+        "createCampaign": "Create Campaign",
+        "createCampaignDesc": "Clients create a campaign with job descriptions for an open role they are hiring for.",
+        "aiAnalysis": "AI Analysis",
+        "aiAnalysisDesc": "We analyze their job description using AI and get A+ prospects that match their criteria.",
+        "outreach": "Outreach",
+        "outreachDesc": "We create outreach sequences that send out messages to these candidates via email.",
+        "meetingSetup": "Meeting Setup",
+        "meetingSetupDesc": "When a candidate is approved by our client, a meeting is set up with both parties."
+    },
+      "stats": {
+        "candidatePool": "Candidate Pool",
+        "advancedSourcingFilters": "Advanced Sourcing Filters",
+        "interviewsBooked": "Interviews Booked"
+    },
+    "about": {
+        "title": "About Chika.ai",
+        "whoWeAre": "Who We Are",
+        "mission": "Chika.ai is a cutting-edge AI-powered recruitment platform that connects top talent with innovative companies. Our mission is to revolutionize the hiring process, making it more efficient, accurate, and stress-free for both employers and job seekers.",
+        "founded": "Founded by a team of HR professionals and AI experts, we combine deep industry knowledge with state-of-the-art technology to create a seamless recruitment experience.",
+        "leadershipTeam": "Our Leadership Team",
+        "leadership": {
+          "johnDoe": "John Doe",
+          "johnRole": "CEO",
+          "janeSmith": "Jane Smith",
+          "janeRole": "CTO",
+          "mikeJohnson": "Mike Johnson",
+          "mikeRole": "COO"
+        },
+        "goalTitle": "Our Goal",
+        "goal": "At Chika.ai, our goal is to transform the recruitment landscape by leveraging AI technology to create perfect matches between talented individuals and forward-thinking companies. We aim to reduce hiring time, improve the quality of hires, and enhance the overall recruitment experience for all parties involved.",
+        "vision": "We envision a world where finding the right job or the right candidate is no longer a challenge, but an exciting and rewarding journey.",
+        "storyTitle": "Our Story",
+        "story": "Chika.ai was born out of a shared frustration with traditional recruitment methods. Our founders, having experienced the challenges of hiring and job seeking firsthand, saw an opportunity to revolutionize the process using AI technology.",
+        "origin": "What started as a solution for our co-founder Dumebi during her time as a headhunter has since evolved into a team of passionate individuals committed to making recruitment smarter, faster, and more human-centered.",
+        "today": "Today, we're proud to be partnering with some of the most innovative companies worldwide, helping them build their dream teams while assisting countless professionals in finding fulfilling careers."
+    },
+    "howItWorks": {
+        "title": "How Chika.ai Works",
+        "intro": "Discover our streamlined process for connecting top talent with innovative companies.",
+        "steps": {
+        "createCampaign": {
+            "title": "Create Campaign",
+            "description": "Clients create a campaign with detailed job descriptions for an open role they are hiring for. This includes key responsibilities, required skills, and company culture fit.",
+            "details": [
+                "Specify job title and department",
+                "Define key responsibilities and required skills",
+                "Describe ideal candidate profile",
+                "Set salary range and benefits",
+                "Outline company culture and values"
+            ],
+            "form": {
+            "jobTitle": "Job Title",
+            "department": "Department",
+            "salaryRange": "Salary Range"
+            },
+            "button": "Create Campaign"
+        },
+        "aiAnalysis": {
+            "title": "AI Analysis",
+            "description": "Our advanced AI analyzes the job description and scans our extensive database to identify A+ prospects that match the specified criteria.",
+            "details": [
+            "Parse job description for key requirements",
+            "Match skills and experience with candidate profiles",
+            "Analyze candidate career trajectories",
+            "Evaluate cultural fit based on previous roles",
+            "Rank candidates based on overall match score"
+            ],
+            "steps": [
+            "Parsing job description",
+            "Matching candidates",
+            "Analyzing career trajectories",
+            "Evaluating cultural fit",
+            "Ranking candidates"
+            ]
+        },
+        "outreach": {
+            "title": "Outreach",
+            "description": "We create personalized outreach sequences and send targeted messages to the selected candidates via email, ensuring high engagement rates.",
+            "details": [
+            "Craft personalized email templates",
+            "Schedule multi-touch outreach campaigns",
+            "Track open rates and responses",
+            "Optimize message content based on performance",
+            "Manage candidate replies and schedule follow-ups"
+            ],
+            "emailTemplate": {
+            "subject": "Subject: Exciting Opportunity at [Company Name]",
+            "body": "We have an exciting role that matches your expertise...",
+            "stats": {
+                "sent": "Sent: 50",
+                "opened": "Opened: 38",
+                "responded": "Responded: 15"
+            },
+            "button": "Send Outreach Email"
+            }
+        },
+        "meetingSetup": {
+            "title": "Meeting Setup",
+            "description": "When a candidate is approved by our client, we facilitate the scheduling of an interview or meeting between both parties.",
+            "details": [
+            "Coordinate available time slots",
+            "Send calendar invitations to both parties",
+            "Provide interview preparation materials",
+            "Send reminders to ensure attendance",
+            "Gather post-interview feedback"
+            ],
+            "example": {
+            "title": "Interview with John Doe",
+            "date": "Date: July 15, 2023",
+            "time": "Time: 2:00 PM - 3:00 PM",
+            "status": "Status: Confirmed",
+            "button": "Send Reminder"
+            }
+        }
+        },
+        "cta": {
+        "title": "Ready to Transform Your Hiring Process?",
+        "button": "Get Started with Chika.ai"
+        }
+    }      
 }

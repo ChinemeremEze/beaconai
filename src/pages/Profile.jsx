@@ -11,8 +11,7 @@ import { Plus, Loader2, PlusCircle, FolderOpen} from 'lucide-react'
 import { useNavigate } from 'react-router-dom';
 import { useAuthFetch } from '../hooks/useAuthFetch';
 // import CampaignList from '../components/CampaignList';
-// import CreateCampaign from '../components/CreateCampaign';
-
+import { Helmet } from 'react-helmet-async';
 export default function Profile() {
   const { user, isAuthenticated, isLoading } = useAuth0();
   const [activeTab, setActiveTab] = useState('all');

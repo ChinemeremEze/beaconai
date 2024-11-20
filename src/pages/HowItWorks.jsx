@@ -66,7 +66,8 @@ const CreateCampaignForm = () => {
 
 const AIAnalysisVisual = () => {
   const [currentStep, setCurrentStep] = useState(0)
-  const steps = ['Parsing job description', 'Matching candidates', 'Analyzing career trajectories', 'Evaluating cultural fit', 'Ranking candidates']
+  const {t} = useTranslation()
+  const steps = t('howItWorks.steps.aiAnalysis.steps', {returnObjects: true});
 
   React.useEffect(() => {
     const timer = setInterval(() => {
@@ -109,7 +110,9 @@ const AIAnalysisVisual = () => {
 }
 
 const OutreachVisual = () => {
+  const {t} = useTranslation()
   const [emailSent, setEmailSent] = useState(false)
+  //const steps = t('howItWorks.steps.outreach.steps', {returnObjects: true});
 
   return (
     <motion.div 
@@ -118,13 +121,13 @@ const OutreachVisual = () => {
       transition={{ duration: 0.5 }}
       className="bg-white p-8 rounded-xl shadow-2xl"
     >
-      <h3 className="text-2xl font-bold mb-6 text-gray-800">Outreach</h3>
+      <h3 className="text-2xl font-bold mb-6 text-gray-800">{t('howItWorks.steps.outreach.title')}</h3>
       <div className="space-y-4">
         <div className="bg-gray-100 p-4 rounded-lg">
-          <p className="font-semibold text-gray-800">Email Template</p>
-          <p className="text-sm text-gray-600">Subject: Exciting Opportunity at [Company Name]</p>
+          <p className="font-semibold text-gray-800"></p>
+          <p className="text-sm text-gray-600">{t('howItWorks.steps.outreach.emailTemplate.subject')}</p>
           <p className="text-sm text-gray-600">Dear [Candidate Name],</p>
-          <p className="text-sm text-gray-600">We have an exciting role that matches your expertise...</p>
+          <p className="text-sm text-gray-600">{t('howItWorks.steps.outreach.emailTemplate.body')}</p>
         </div>
         <div className="flex justify-between text-sm text-gray-600">
           <span>Sent: 50</span>
@@ -169,12 +172,12 @@ const MeetingSetupVisual = () => {
       transition={{ duration: 0.5 }}
       className="bg-gray-100 p-8 rounded-xl shadow-2xl"
     >
-      <h3 className="text-2xl font-bold mb-6 text-gray-800">Meeting Setup</h3>
+      <h3 className="text-2xl font-bold mb-6 text-gray-800">Approve Candidate</h3>
       <div className="space-y-4">
         <div className="bg-white p-4 rounded-lg">
           <p className="font-semibold text-gray-800">Interview with John Doe</p>
-          <p className="text-sm text-gray-600">Date: July 15, 2023</p>
-          <p className="text-sm text-gray-600">Time: 2:00 PM - 3:00 PM</p>
+          <p className="text-sm text-gray-600">Clients Calender Link</p>
+          <p className="text-sm text-gray-600">Company Name | Job Position Interview </p>
           <p className="text-sm text-gray-600">Status: Confirmed</p>
         </div>
         <Button 
@@ -206,61 +209,6 @@ const MeetingSetupVisual = () => {
 }
 
 
-const steps = [
-  {
-    icon: <FileText className="h-16 w-16 text-pink-600" aria-hidden="true" />,
-    title: 'Create Campaign',
-    description: 'Clients create a campaign with detailed job descriptions for an open role they are hiring for. This includes key responsibilities, required skills, and company culture fit.',
-    details: [
-      'Specify job title and department',
-      'Define key responsibilities and required skills',
-      'Describe ideal candidate profile',
-      'Set salary range and benefits',
-      'Outline company culture and values'
-    ],
-    visual: <CreateCampaignForm />
-  },
-  {
-    icon: <Search className="h-16 w-16 text-pink-600" aria-hidden="true" />,
-    title: 'AI Analysis',
-    description: 'Our advanced AI analyzes the job description and scans our extensive database to identify A+ prospects that match the specified criteria.',
-    details: [
-      'Parse job description for key requirements',
-      'Match skills and experience with candidate profiles',
-      'Analyze candidate career trajectories',
-      'Evaluate cultural fit based on previous roles',
-      'Rank candidates based on overall match score'
-    ],
-    visual: <AIAnalysisVisual />
-  },
-  {
-    icon: <Mail className="h-16 w-16 text-pink-600" aria-hidden="true" />,
-    title: 'Outreach',
-    description: 'We create personalized outreach sequences and send targeted messages to the selected candidates via email, ensuring high engagement rates.',
-    details: [
-      'Craft personalized email templates',
-      'Schedule multi-touch outreach campaigns',
-      'Track open rates and responses',
-      'Optimize message content based on performance',
-      'Manage candidate replies and schedule follow-ups'
-    ],
-    visual: <OutreachVisual />
-  },
-  {
-    icon: <Calendar className="h-16 w-16 text-pink-600" aria-hidden="true" />,
-    title: 'Meeting Setup',
-    description: 'When a candidate is approved by our client, we facilitate the scheduling of an interview or meeting between both parties.',
-    details: [
-      'Coordinate available time slots',
-      'Send calendar invitations to both parties',
-      'Provide interview preparation materials',
-      'Send reminders to ensure attendance',
-      'Gather post-interview feedback'
-    ],
-    visual: <MeetingSetupVisual />
-  }
-]
-
 const StepIndicator = ({number }) => (
   <div className="absolute top-6 left-9 -mt-6 -ml-6 bg-pink-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold shadow-lg">
     {number}
@@ -270,6 +218,36 @@ const StepIndicator = ({number }) => (
 export default function HowItWorks() {
   const { t } = useTranslation();
 
+  const steps = [
+    {
+      icon: <FileText className="h-16 w-16 text-pink-600" aria-hidden="true" />,
+      title: 'Create Campaign',
+      description: 'howItWorks.steps.createCampaign.description',
+      details: t('howItWorks.steps.createCampaign.details', { returnObjects: true }),
+      visual: <CreateCampaignForm />
+    },
+    {
+      icon: <Search className="h-16 w-16 text-pink-600" aria-hidden="true" />,
+      title: t('howItWorks.steps.aiAnalysis.title'),
+      description: t('howItWorks.steps.aiAnalysis.description'),
+      details: t('howItWorks.steps.aiAnalysis.details', { returnObjects: true }),
+      visual: <AIAnalysisVisual />
+    },
+    {
+      icon: <Mail className="h-16 w-16 text-pink-600" aria-hidden="true" />,
+      title: t('howItWorks.steps.outreach.title'),
+      description: t('howItWorks.steps.outreach.description'),
+      details: t('howItWorks.steps.outreach.details', { returnObjects: true }),
+      visual: <OutreachVisual />
+    },
+    {
+      icon: <Calendar className="h-16 w-16 text-pink-600" aria-hidden="true" />,
+      title: t('howItWorks.steps.meetingSetup.title'),
+      description: t('howItWorks.steps.meetingSetup.description'),
+      details: t('howItWorks.steps.meetingSetup.details', { returnObjects: true }),
+      visual: <MeetingSetupVisual />
+    }
+  ]
   return (
     <>
       <Helmet>
@@ -286,7 +264,7 @@ export default function HowItWorks() {
                 transition={{ duration: 0.5 }}
                 className="text-5xl font-extrabold text-gray-900 sm:text-6xl md:text-7xl"
               >
-                How Chika.ai Works
+               {t('howItWorks.title')}
               </motion.h1>
               <motion.p 
                 initial={{ opacity: 0, y: 20 }}
@@ -294,7 +272,7 @@ export default function HowItWorks() {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="mt-6 max-w-md mx-auto text-xl text-gray-500 sm:text-2xl md:mt-8 md:max-w-3xl"
               >
-                Discover our streamlined process for connecting top talent with innovative companies.
+                  {t('howItWorks.intro')}
               </motion.p>
             </div>
           </section>
@@ -314,9 +292,11 @@ export default function HowItWorks() {
                       {step.icon}
                     </div>
                     <h2 className="text-3xl font-bold text-gray-900 mb-4">{step.title}</h2>
-                    <p className="text-xl text-gray-600 mb-6">{step.description}</p>
+                    <p className="text-xl text-gray-600 mb-6">{t(step.description)}</p>
+                    {console.log(t(step.description))}
+                    {console.log((step.details))}
                     <ul className="space-y-4" aria-label={`Details for ${step.title}`}>
-                      {step.details.map((detail, i) => (
+                      {(step.details).map((detail, i) => (
                         <li key={i} className="flex items-start">
                           <ArrowRight className="h-6 w-6 text-pink-500 mr-2 mt-1 flex-shrink-0" aria-hidden="true" />
                           <span className="text-lg text-gray-600">{detail}</span>
@@ -340,7 +320,7 @@ export default function HowItWorks() {
                 transition={{ duration: 0.5 }}
                 className="text-4xl font-extrabold text-white mb-8"
               >
-                Ready to Transform Your Hiring Process?
+                {t('howItWorks.cta.title')}
               </motion.h2>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -349,7 +329,7 @@ export default function HowItWorks() {
               >
                 <Link to="/profile">
                   <Button size="lg" variant="secondary" className="text-pink-600 bg-white hover:bg-gray-100 text-lg px-8 py-4 rounded-full transition duration-300 transform hover:scale-105">
-                    {t('getStarted')} with Chika.ai
+                  {t('howItWorks.cta.button')}
                   </Button>
                 </Link>
               </motion.div>

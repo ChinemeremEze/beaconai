@@ -1,7 +1,160 @@
 {
     "welcome": "Bienvenue sur Chika.ai",
-    "description": "Trouvez votre correspondance parfaite avec l'IA de pointe.",
-    "scheduleDemo": "Planifier une démo",
-    "getStarted": "Commencer"
+    "homeBannerTitle1": "Automatisez votre",
+    "homeBannerTitle2": "Sourcing avec l'IA",
+    "homeBannerMessage": "En utilisant l'IA, nous simplifions votre processus de recrutement en identifiant les candidats parfaits pour votre poste, en les contactant avec des modèles personnalisés, en gérant toute la communication et en permettant une planification instantanée des entretiens avec les candidats que vous approuvez.",
+    "description": "Trouvez votre correspondance parfaite en matière de talents avec l'IA de pointe.",
+    "scheduleDemo": "Planifiez une démo",
+    "getStarted": "Commencer",
+    "videoHeading": "LE RECRUTEMENT N'A JAMAIS ÉTÉ AUSSI SIMPLE",
+    "videoMainTitle": "Présentation de Chika.ai",
+    "videoSubHeading": "La méthode moderne pour sourcer des talents",
+    "videoMessage1": "Décrivez simplement votre candidat idéal, et nous aurons",
+    "videoMessage2": "des candidats qualifiés et intéressés ",
+    "videoMessage3": "planifiés sur votre calendrier dès le lendemain. C'est aussi simple que cela.",
+    "logosHeader": "Connectez-vous avec des talents provenant du plus grand réseau professionnel mondial",
+    "impactTitle": "Notre impact en chiffres",
+    "impactLabel1": "Pool de candidats",
+    "impactLabel2": "Filtres de sourcing avancés",
+    "impactLabel3": "Entretiens réservés",
+    "whyChika": "Pourquoi choisir Chika.ai ?",
+    "builtBy": "Conçu par des recruteurs pour",
+    "builtFor": ["recruteurs", "chasseurs de têtes", "entreprises", "agences", "startups"],
+    "testimonialTitle": "Ce que disent nos clients",
+    "features": {
+      "talentSourcing": "Sourcing de talents",
+      "talentSourcingDesc": "Nous analysons des centaines de profils chaque semaine et contactons 50 à 100 meilleurs candidats.",
+      "personalisedOutreach": "Prise de contact personnalisée",
+      "personalisedOutreachDesc": "Nous utilisons des modèles personnalisés pilotés par l'IA, prouvés pour engager les candidats.",
+      "streamlinedCommunication": "Communication simplifiée",
+      "streamlinedCommunicationDesc": "Lorsque les candidats montrent de l'intérêt, nous gérons toute la communication pour vous.",
+      "instantScheduling": "Planification instantanée",
+      "instantSchedulingDesc": "Il vous suffit d'approuver un candidat d'un clic, et votre lien Calendly lui sera envoyé pour un entretien."
+    },
+    "testimonials": {
+      "sarahContent": "Chika.ai a révolutionné notre processus de recrutement. Nous continuons à trouver des talents incroyables en un temps record et à un prix inférieur à celui du secteur !",
+      "isaacContent": "C'est sans doute l'une des meilleures décisions d'affaires que j'ai prises pour ma startup. J'ai passé des mois à chercher un ingénieur fondateur, et en seulement une semaine d'utilisation de Chika.ai, j'ai pu embaucher le candidat parfait.",
+      "emilyContent": "J'ai essayé de nombreuses plateformes de recrutement par IA, essayé LinkedIn, et c'était juste trop de bruit. Puis j'ai travaillé avec les experts sourcers de Wellfound — ils sont tellement réactifs et polis, et m'ont fait gagner tellement de temps et d'argent. Je voulais juste les bons candidats et c'est ce que j'ai eu."
+    },
+    "howItWorksOverview": {
+      "createCampaign": "Créer une campagne",
+      "createCampaignDesc": "Les clients créent une campagne avec des descriptions de poste pour un rôle qu'ils recrutent.",
+      "aiAnalysis": "Analyse par IA",
+      "aiAnalysisDesc": "Nous analysons leur description de poste à l'aide de l'IA et trouvons des prospects de qualité qui correspondent à leurs critères.",
+      "outreach": "Prise de contact",
+      "outreachDesc": "Nous créons des séquences de contact qui envoient des messages à ces candidats par email.",
+      "meetingSetup": "Configuration de réunion",
+      "meetingSetupDesc": "Lorsqu'un candidat est approuvé par notre client, une réunion est organisée avec les deux parties."
+    },
+    "stats": {
+      "candidatePool": "Pool de candidats",
+      "advancedSourcingFilters": "Filtres de sourcing avancés",
+      "interviewsBooked": "Entretiens réservés"
+    },
+    "about": {
+        "title": "À propos de Chika.ai",
+        "whoWeAre": "Qui Nous Sommes",
+        "mission": "Chika.ai est une plateforme de recrutement alimentée par l'IA qui connecte les meilleurs talents aux entreprises innovantes. Notre mission est de révolutionner le processus d'embauche, en le rendant plus efficace, précis et sans stress pour les employeurs et les chercheurs d'emploi.",
+        "founded": "Fondée par une équipe de professionnels RH et d'experts en IA, nous combinons une connaissance approfondie du secteur avec une technologie de pointe pour créer une expérience de recrutement fluide.",
+        "leadershipTeam": "Notre Équipe de Direction",
+        "leadership": {
+            "johnDoe": "John Doe",
+            "johnRole": "PDG",
+            "janeSmith": "Jane Smith",
+            "janeRole": "Directrice Technique",
+            "mikeJohnson": "Mike Johnson",
+            "mikeRole": "Directeur des Opérations"
+        },
+        "goalTitle": "Notre Objectif",
+        "goal": "Chez Chika.ai, notre objectif est de transformer le paysage du recrutement en exploitant la technologie IA pour créer des correspondances parfaites entre des individus talentueux et des entreprises innovantes. Nous visons à réduire le temps d'embauche, améliorer la qualité des recrutements et enrichir l'expérience globale de recrutement pour toutes les parties impliquées.",
+        "vision": "Nous imaginons un monde où trouver le bon emploi ou le bon candidat n'est plus un défi, mais une aventure passionnante et gratifiante.",
+        "storyTitle": "Notre Histoire",
+        "story": "Chika.ai est née d'une frustration commune avec les méthodes de recrutement traditionnelles. Nos fondateurs, ayant vécu les défis de l'embauche et de la recherche d'emploi, ont vu une opportunité de révolutionner le processus grâce à la technologie IA.",
+        "origin": "Ce qui a commencé comme une solution pour notre co-fondatrice Dumebi lors de son expérience en tant que chasseuse de têtes a depuis évolué en une équipe d'individus passionnés, engagés à rendre le recrutement plus intelligent, rapide et centré sur l'humain.",
+        "today": "Aujourd'hui, nous sommes fiers de collaborer avec certaines des entreprises les plus innovantes au monde, en les aidant à constituer leurs équipes de rêve tout en accompagnant d'innombrables professionnels dans la recherche de carrières épanouissantes."
+    },
+    "howItWorks": {
+        "title": "Comment fonctionne Chika.ai",
+        "intro": "Découvrez notre processus simplifié pour connecter les meilleurs talents avec des entreprises innovantes.",
+        "steps": {
+        "createCampaign": {
+            "title": "Créer une campagne",
+            "description": "Les clients créent une campagne avec des descriptions de poste détaillées pour un rôle ouvert qu'ils recherchent à pourvoir. Cela inclut les responsabilités clés, les compétences requises et la compatibilité avec la culture de l'entreprise.",
+            "details": [
+            "Spécifiez le titre du poste et le département",
+            "Définissez les responsabilités clés et les compétences requises",
+            "Décrivez le profil du candidat idéal",
+            "Fixez la fourchette salariale et les avantages",
+            "Décrivez la culture et les valeurs de l'entreprise"
+            ],
+            "form": {
+            "jobTitle": "Titre du poste",
+            "department": "Département",
+            "salaryRange": "Fourchette salariale"
+            },
+            "button": "Créer une campagne"
+        },
+        "aiAnalysis": {
+            "title": "Analyse par IA",
+            "description": "Notre IA avancée analyse la description du poste et parcourt notre vaste base de données pour identifier les meilleurs candidats correspondant aux critères spécifiés.",
+            "details": [
+            "Analyser la description du poste pour les exigences clés",
+            "Associer les compétences et l'expérience aux profils des candidats",
+            "Analyser les trajectoires professionnelles des candidats",
+            "Évaluer la compatibilité culturelle en fonction des rôles précédents",
+            "Classer les candidats en fonction du score de correspondance global"
+            ],
+            "steps": [
+            "Analyse de la description de poste",
+            "Association des candidats",
+            "Analyse des trajectoires professionnelles",
+            "Évaluation de la compatibilité culturelle",
+            "Classement des candidats"
+            ]
+        },
+        "outreach": {
+            "title": "Communication",
+            "description": "Nous créons des séquences de communication personnalisées et envoyons des messages ciblés aux candidats sélectionnés par e-mail, garantissant des taux d'engagement élevés.",
+            "details": [
+            "Créer des modèles d'e-mail personnalisés",
+            "Planifier des campagnes de communication à plusieurs étapes",
+            "Suivre les taux d'ouverture et les réponses",
+            "Optimiser le contenu des messages en fonction des performances",
+            "Gérer les réponses des candidats et programmer des suivis"
+            ],
+            "emailTemplate": {
+            "subject": "Sujet : Opportunité passionnante chez [Nom de l'entreprise]",
+            "body": "Nous avons un rôle passionnant qui correspond à votre expertise...",
+            "stats": {
+                "sent": "Envoyés : 50",
+                "opened": "Ouverts : 38",
+                "responded": "Réponses : 15"
+            },
+            "button": "Envoyer un e-mail de communication"
+            }
+        },
+        "meetingSetup": {
+            "title": "Organisation des réunions",
+            "description": "Lorsqu'un candidat est approuvé par notre client, nous facilitons la planification d'un entretien ou d'une réunion entre les deux parties.",
+            "details": [
+            "Coordonner les créneaux horaires disponibles",
+            "Envoyer des invitations au calendrier aux deux parties",
+            "Fournir des documents de préparation à l'entretien",
+            "Envoyer des rappels pour assurer la présence",
+            "Recueillir les commentaires post-entretien"
+            ],
+            "example": {
+            "title": "Entretien avec John Doe",
+            "date": "Date : 15 juillet 2023",
+            "time": "Heure : 14h00 - 15h00",
+            "status": "Statut : Confirmé",
+            "button": "Envoyer un rappel"
+            }
+        }
+        },
+        "cta": {
+        "title": "Prêt à transformer votre processus de recrutement ?",
+        "button": "Commencez avec Chika.ai"
+        }
+    }
 }
-  

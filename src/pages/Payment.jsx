@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements, PaymentElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Helmet } from 'react-helmet-async';
 // Replace with your Stripe publishable key
 const stripePromise = loadStripe(import.meta.env.VITE_APP_STRIPE_PUBLISHABLE_KEY);
 
@@ -45,6 +46,8 @@ function CheckoutForm() {
 export default function Payment() {
     const location = useLocation();
     const [clientSecret, setClientSecret] = useState(location.state?.client_secret || '');  
+    const [campaignType, setCampaignType] = useState(location.state?.campaignType || '');  
+    const [amount, setAmount] = useState(location.state?.amount || '');  
     
   return (
     <div className="container mx-auto px-4 py-16">
@@ -53,6 +56,10 @@ export default function Payment() {
           <CardTitle className="text-2xl font-bold text-center">Complete Your Payment</CardTitle>
         </CardHeader>
         <CardContent>
+          <div className="mb-4">
+            <p className="text-lg font-semibold">{campaignType} Campaign</p>
+            <p className="text-xl text-green-600">${amount/100}</p>
+          </div>
           {clientSecret && (
             <Elements stripe={stripePromise} options={{ clientSecret }}>
               <CheckoutForm />

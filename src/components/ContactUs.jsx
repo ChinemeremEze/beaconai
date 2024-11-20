@@ -65,7 +65,7 @@ export default function ContactUs() {
         <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">Contact Us</h2>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
+            <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name <span className="text-red-700 text-lg">*</span></label>
             <Input 
               id="name" 
               name="name" 
@@ -77,7 +77,7 @@ export default function ContactUs() {
             />
           </div>
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email <span className="text-red-700 text-lg">*</span></label>
             <Input 
               id="email" 
               name="email" 
@@ -89,7 +89,7 @@ export default function ContactUs() {
             />
           </div>
           <div>
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
+            <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message <span className="text-red-700 text-lg">*</span></label>
             <Textarea 
               id="message" 
               name="message" 

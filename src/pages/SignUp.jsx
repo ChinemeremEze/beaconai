@@ -1,5 +1,5 @@
 import { useState } from 'react'
-
+import { Helmet } from 'react-helmet-async'
 export default function SignUp() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
