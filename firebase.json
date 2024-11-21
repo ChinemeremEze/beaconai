@@ -3,7 +3,7 @@
   "hosting": [
     {
       "target": "dev",
-      "public": "public",
+      "public": "dist",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "rewrites": [
         {
@@ -14,7 +14,7 @@
     },
     {
       "target": "uat",
-      "public": "public",
+      "public": "dist",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "rewrites": [
         {
@@ -25,7 +25,7 @@
     },
     {
       "target": "prod",
-      "public": "public",
+      "public": "dist",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "rewrites": [
         {
