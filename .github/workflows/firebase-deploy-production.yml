@@ -3,21 +3,23 @@ name: Deploy to Live Channel
 on:
   push:
     branches:
-      - master
-    # Optionally configure to run only for specific files. For example:
-    # paths:
-    # - "website/**"
+      - master # Change this to the branch you are using (e.g., 'main')
 
 jobs:
   deploy_live_website:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      # Add any build steps here. For example:
-      - run: npm ci && npm run build
-      - uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_CHIKA_AI_2024 }}
+      # Step 1: Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step 2: Install dependencies and build the project
+      - name: Install and build project
+        run: |
+          npm ci
+          npm run build
+        env:
           VITE_APP_AUTH0_DOMAIN: ${{ secrets.VITE_APP_AUTH0_DOMAIN }}
           VITE_APP_AUTH0_CLIENT_ID: ${{ secrets.VITE_APP_AUTH0_CLIENT_ID }}
           VITE_APP_AUTH0_CALLBACK_URL: ${{ secrets.VITE_APP_AUTH0_CALLBACK_URL }}
@@ -28,5 +30,11 @@ jobs:
           VITE_APP_BASIC_CAMPAIGN_PRICE: ${{ secrets.VITE_APP_BASIC_CAMPAIGN_PRICE }}
           VITE_APP_SENIOR_CAMPAIGN_PRICE: ${{ secrets.VITE_APP_SENIOR_CAMPAIGN_PRICE }}
           VITE_APP_EXECUTIVE_CAMPAIGN_PRICE: ${{ secrets.VITE_APP_EXECUTIVE_CAMPAIGN_PRICE }}
+
+      # Step 3: Deploy to Firebase Hosting
+      - name: Deploy to Firebase Hosting (Live Channel)
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_CHIKA_AI_2024 }}
           projectId: chika-ai-2024
           channelId: live
