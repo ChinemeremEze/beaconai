@@ -1,0 +1,36 @@
+name: Deploy to DEV Channel
+
+on:
+  push:
+    branches:
+      - dev
+    # Optionally configure to run only for specific files. For example:
+    # paths:
+    # - "website/**"
+
+jobs:
+  deploy_dev_website:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # Install Node.js dependencies
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+
+        with:
+          node-version: "22" # Ensure this matches your project's Node.js version
+      - name: Install dependencies
+        run: npm ci
+
+      # Build the project
+      - name: Build the project
+        run: npm run build
+
+      # Deploy to Firebase Hosting
+      - name: Deploy to Firebase Hosting (Dev Target)
+        uses: FirebaseExtended/action-hosting-deploy@v0
+
+        with:
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_CHIKA_AI_2024 }}
+          projectId: chika-ai-2024
+          target: dev

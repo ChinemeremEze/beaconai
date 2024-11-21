@@ -16,14 +16,15 @@ import CreateCampaign from './components/CreateCampaign';
 import HowItWorks from './pages/HowItWorks';
 import { Toaster } from "@/components/ui/toaster"
 import PageNotFound from './components/PageNotFound';
+import { Loader } from 'lucide-react';
 function App() {
 
   const { isLoading } = useAuth0();
 
   if (isLoading) {
     return (
-      <div className="page-layout">
-        <h1>Loading</h1>
+      <div className="page-layout flex justify-center ">
+        <Loader/>
       </div>
     );
   }
@@ -37,7 +38,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/features" element={<Features />} />
+            {/* <Route path="/features" element={<Features />} /> */}
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/callback" element={<Home />} />
             <Route path="/login" element={<Login />} />

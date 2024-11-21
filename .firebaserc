@@ -1,0 +1,21 @@
+{
+  "projects": {
+    "default": "chika-ai-2024"
+  },
+  "targets": {
+    "chika-ai-2024": {
+      "hosting": {
+        "dev": [
+          "chika-ai-dev"
+        ],
+        "uat": [
+          "chika-ai-uat"
+        ],
+        "prod": [
+          "chika-ai-2024"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
