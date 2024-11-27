@@ -26,13 +26,13 @@ export default function ViewCampaign() {
     const { user, getAccessTokenSilently } = useAuth0();
     const [selectedCandidate, setSelectedCandidate] = useState(null);
     const [selectedStatus, setSelectedStatus] = useState('All');
-    const { data: campaign, error: campaignError, isLoading: isLoadingCampaign } = useAuthFetch(['campaign'], `http://localhost:3000/api/campaign/${campaignId}`);
+    const { data: campaign, error: campaignError, isLoading: isLoadingCampaign } = useAuthFetch(['campaign'], `${import.meta.env.VITE_APP_BACKEND_URL}/api/campaign/${campaignId}`);
     
     const { mutate: approveCandidate, isLoading, isError, isSuccess, error} = useAuthMutation(['campaigns', campaignId, selectedCandidate?.id],
-      `http://localhost:3000/api/candidate/approve/${campaignId}/${selectedCandidate?.id}`);
+      `${import.meta.env.VITE_APP_BACKEND_URL}/api/candidate/approve/${campaignId}/${selectedCandidate?.id}`);
     
     const { mutate: rejectCandidate, isLoading: isRejectLoading, isError: isRejectError, isSuccess : isRejectSuccess, error: rejectError,
-      } = useAuthMutation(['campaigns', campaignId, selectedCandidate?.id], `http://localhost:3000/api/candidate/reject/${campaignId}/${selectedCandidate?.id}`);
+      } = useAuthMutation(['campaigns', campaignId, selectedCandidate?.id], `${import.meta.env.VITE_APP_BACKEND_URL}/api/candidate/reject/${campaignId}/${selectedCandidate?.id}`);
       // Define a handler to trigger the mutation
     const handleApprove = () => {
       handleStatusChange(selectedCandidate.id, "Approved")

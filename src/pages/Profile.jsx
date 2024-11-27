@@ -22,7 +22,7 @@ export default function Profile() {
   //   { id: 2, title: "Senior Product Manager", type: "Senior", approvedCandidates: 2 },
   //   { id: 3, title: "Chief Technology Officer", type: "Executive", approvedCandidates: 1 },
   // ];
-  const { data: campaigns, error, isLoading: fetchisLoading,  } = useAuthFetch(['campaigns'], `http://localhost:3000/api/campaigns/`);
+  const { data: campaigns, error, isLoading: fetchisLoading,  } = useAuthFetch(['campaigns'], `${import.meta.env.VITE_APP_BACKEND_URL}/api/campaigns/`);
   let filteredCampaigns = campaigns
   //console.log(campaigns)
   

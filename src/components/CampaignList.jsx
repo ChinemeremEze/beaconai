@@ -13,7 +13,7 @@ const mockCampaigns = [
 
 export default function CampaignList() {
     const [selectedCampaign, setSelectedCampaign] = useState(null);
-    const { data, error, isLoading } = useAuthFetch(['campaigns'], 'http://localhost:3000/api/campaigns');
+    const { data, error, isLoading } = useAuthFetch(['campaigns'], `${import.meta.env.VITE_APP_BACKEND_URL}/api/campaigns`);
 
     if (isLoading) return <p>Loading...</p>;
     if (error) return <p>Error: {error.message}</p>;

@@ -60,7 +60,7 @@ export default function CreateCampaign() {
 
     const { mutate: createCampaignMutation, isLoading: isSubmitting } = useAuthMutation(
         ['createCampaign'],
-        'http://localhost:3000/api/payments/create-payment-intent'
+        `${import.meta.env.VITE_APP_BACKEND_URL}/api/payments/create-payment-intent`
     );
     const [formData, setFormData] = useState({
         ['Name']: '',

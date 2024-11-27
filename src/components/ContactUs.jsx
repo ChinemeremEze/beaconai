@@ -30,7 +30,7 @@ export default function ContactUs() {
     const token = await executeRecaptcha('contact_form')
 
     try {
-      const response = await fetch('http://localhost:3000/api/contact', {
+      const response = await fetch(`${import.meta.env.VITE_APP_BACKEND_URL}/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
