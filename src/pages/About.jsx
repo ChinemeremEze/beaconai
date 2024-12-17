@@ -5,9 +5,9 @@ import ContactUs from '../components/ContactUs'
 import { Helmet } from 'react-helmet-async'
 import { useTranslation } from 'react-i18next';
 const teamMembers = [
-  { name: 'John Doe', role: 'CEO', image: '/placeholder.svg?height=200&width=200' },
-  { name: 'Jane Smith', role: 'CTO', image: '/placeholder.svg?height=200&width=200' },
-  { name: 'Mike Johnson', role: 'COO', image: '/placeholder.svg?height=200&width=200' },
+  { name: 'Chidumebi Ezeakudolu', role: 'Co-founder', image: '/images/chidumebi.png' },
+  { name: 'Nana Anima', role: 'Head of Client Success', image: '/images/abena.png' },
+  { name: 'Timi Akinlade', role: 'Chief Human Resources Officer', image: '/images/timi.png' },
 ]
 
 export default function About() {
@@ -54,7 +54,7 @@ export default function About() {
               >
                 <Card>
                   <CardContent className="p-6 text-center">
-                    <img src={member.image} alt={member.name} className="w-32 h-32 rounded-full mx-auto mb-4" />
+                    <img src={member.image} alt={member.name} className="w-64 h-64 rounded-full mx-auto mb-4 border-2 border-pink-300"  />
                     <h3 className="text-xl font-semibold text-gray-900">{member.name}</h3>
                     <p className="text-gray-600">{member.role}</p>
                   </CardContent>

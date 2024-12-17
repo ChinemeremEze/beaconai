@@ -2,14 +2,12 @@ import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FileText, Search, Mail, Calendar, ArrowRight, User, Briefcase, DollarSign, Check, X } from 'lucide-react'
 import { Button } from "../components/ui/button"
-import Footer from '../components/Footer'
 import { useTranslation } from 'react-i18next'
 import { Helmet } from 'react-helmet-async'
-import { Link } from 'react-router-dom'
+import { useAuth0 } from '@auth0/auth0-react';
 
 const CreateCampaignForm = () => {
   const [formState, setFormState] = useState({ jobTitle: '', department: '', salaryRange: '' })
-
   const handleInputChange = (e) => {
     setFormState({ ...formState, [e.target.name]: e.target.value })
   }
@@ -216,6 +214,8 @@ const StepIndicator = ({number }) => (
 )
 
 export default function HowItWorks() {
+  const { loginWithRedirect, isAuthenticated } = useAuth0();
+
   const { t } = useTranslation();
 
   const steps = [
@@ -278,7 +278,7 @@ export default function HowItWorks() {
           </section>
 
           {steps.map((step, index) => (
-            <section key={step.title} className="w-full py-20 px-4 sm:px-6 lg:px-8">
+            <section id={step.title.toLowerCase().replace(" ", "-")} key={step.title} className="w-full py-20 px-4 sm:px-6 lg:px-8">
               <div className="max-w-7xl mx-auto">
                 <motion.div
                   initial={{ opacity: 0, y: 50 }}
@@ -293,8 +293,6 @@ export default function HowItWorks() {
                     </div>
                     <h2 className="text-3xl font-bold text-gray-900 mb-4">{step.title}</h2>
                     <p className="text-xl text-gray-600 mb-6">{t(step.description)}</p>
-                    {console.log(t(step.description))}
-                    {console.log((step.details))}
                     <ul className="space-y-4" aria-label={`Details for ${step.title}`}>
                       {(step.details).map((detail, i) => (
                         <li key={i} className="flex items-start">
@@ -327,11 +325,11 @@ export default function HowItWorks() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                <Link to="/profile">
-                  <Button size="lg" variant="secondary" className="text-pink-600 bg-white hover:bg-gray-100 text-lg px-8 py-4 rounded-full transition duration-300 transform hover:scale-105">
+                {/* <Link to="/profile"> */}
+                  <Button onClick={isAuthenticated ? undefined : () => loginWithRedirect()} size="lg" variant="secondary" className="text-pink-600 bg-white hover:bg-gray-100 text-lg px-8 py-4 rounded-full transition duration-300 transform hover:scale-105">
                   {t('howItWorks.cta.button')}
                   </Button>
-                </Link>
+                {/* </Link> */}
               </motion.div>
             </div>
           </section>

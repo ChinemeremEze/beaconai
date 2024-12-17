@@ -60,7 +60,7 @@ export default function ContactUs() {
   }
 
   return (
-    <section className="py-20 bg-white px-4 sm:px-6 lg:px-8">
+    <section id="contact-us" className="py-20 bg-white px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
         <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">Contact Us</h2>
         <form onSubmit={handleSubmit} className="space-y-6">

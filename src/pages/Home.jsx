@@ -73,7 +73,7 @@ export default function Home () {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
   const logoContainerRef = useRef(null)
   const logoAnimation = useAnimation()
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -150,7 +150,7 @@ export default function Home () {
                 </Button>
               </div>
               <div className="mt-3 sm:mt-0 sm:ml-3">
-                <a href="/features" target='_blank'>
+                <a href="/#contact-us">
                   <Button variant="outline" className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-pink-600 bg-white hover:bg-pink-50 md:py-4 md:text-lg md:px-10">
                     {t('scheduleDemo')}
                   </Button>
@@ -165,11 +165,11 @@ export default function Home () {
       <section className="py-12 bg-gradient-to-r from-pink-50 to-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className='mb-8 text-pink-400 text-center font-bold text-xl tracking-wide'>{t('videoHeading')}</p>
-          <h1 className='text-center text-6xl tracking-wide font-extrabold pt-8'>{t('videoMainTitle')}</h1>
-          <h2 className="text-2xl font-extrabold text-gray-900 text-center mb-4 tracking-wide py-8">{t('videoSubHeading')}</h2>
-          <div className="aspect-w-16 aspect-h-9 h-[600px]">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl text-center font-extrabold tracking-wide">{t('videoMainTitle')}</h1>
+          <h2 className="text-lg sm:text-xl md:text-2xl font-extrabold text-gray-900 text-center mb-4 tracking-wide py-8">{t('videoSubHeading')}</h2>
+          <div className="aspect-h-9 h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[60vh]">
             <iframe 
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+              src={i18n.language === 'fr' ? "https://www.youtube.com/embed/AOubHCTkZsM" : "https://www.youtube.com/embed/behkPE8ODms" }
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
               allowFullScreen
               title="Chika.ai Demo Video"
@@ -180,7 +180,34 @@ export default function Home () {
             {t('videoMessage1')} <span className='font-bold'>{t('videoMessage2')}</span>{t('videoMessage3')}</p>
         </div>
       </section>
-
+          {/* Our Inpact */}
+      <section className="w-full py-20 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">{t('impactTitle')}</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                className="bg-white p-6 rounded-lg shadow-lg text-center"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <stat.icon className="w-12 h-12 text-pink-600 mx-auto mb-4" />
+                <h3 className="text-4xl font-bold text-gray-900 mb-2">
+                  <CountUp 
+                    end={stat.value} 
+                    duration={2} // Animation duration for the counter
+                    separator="," // Add commas to large numbers
+                  />
+                  {t(stat.label.startsWith("C")? "m" : "+")}
+                </h3>
+                <p className="text-lg text-gray-600">{t(stat.label)}</p>
+              </motion.div>
+            ))}
+          </div>
+            </div>
+      </section>
        {/* Partner Logos */}
         <section className="w-full py-12 bg-white">
           <div className="w-[60%] mx-auto relative overflow-hidden">
@@ -202,34 +229,6 @@ export default function Home () {
               </motion.div>
             </div>
           </div>
-        </section>
-            {/* Our Inpact */}
-          <section className="w-full py-20 to-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">{t('impactTitle')}</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  className="bg-white p-6 rounded-lg shadow-lg text-center"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
-                  <stat.icon className="w-12 h-12 text-pink-600 mx-auto mb-4" />
-                  <h3 className="text-4xl font-bold text-gray-900 mb-2">
-                    <CountUp 
-                      end={stat.value} 
-                      duration={2} // Animation duration for the counter
-                      separator="," // Add commas to large numbers
-                    />
-                    {t(stat.label.startsWith("C")? "m" : "+")}
-                  </h3>
-                  <p className="text-lg text-gray-600">{t(stat.label)}</p>
-                </motion.div>
-              ))}
-            </div>
-              </div>
         </section>
       {/* Features Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
