@@ -65,7 +65,6 @@ export default function ViewCampaign() {
         if (selectedCandidate && selectedCandidate.id === candidateId) {
           setSelectedCandidate(prev => prev ? { ...prev, Status: newStatus } : null);
         }
-        console.log(campaign)
     };
 
     if (isLoadingCampaign) {

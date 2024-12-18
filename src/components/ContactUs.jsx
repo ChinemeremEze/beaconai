@@ -18,12 +18,12 @@ export default function ContactUs() {
 
     if (honeypot) {
       // If the honeypot field is filled, silently reject the submission
-      console.log('Bot detected')
+    //  console.log('Bot detected')
       return
     }
 
     if (!executeRecaptcha) {
-      console.log('Execute recaptcha not yet available')
+      //console.log('Execute recaptcha not yet available')
       return
     }
 
@@ -37,7 +37,6 @@ export default function ContactUs() {
         },
         body: JSON.stringify({ name, email, message, token }),
       })
-
       if (response.ok) {
         toast({
           title: "Message Sent",

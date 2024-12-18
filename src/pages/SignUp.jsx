@@ -8,7 +8,7 @@ export default function SignUp() {
   const handleSubmit = (e) => {
     e.preventDefault()
     // Handle sign up logic here
-    console.log('Sign up:', { email, password, companyName })
+    //console.log('Sign up:', { email, password, companyName })
   }
 
   return (

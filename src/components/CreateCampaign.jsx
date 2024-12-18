@@ -132,7 +132,7 @@ export default function CreateCampaign() {
                 }
             },
             onError: (err) => {
-                console.log(err)
+                //console.log(err)
                 setError('Failed to create campaign. Please try again.');
             },
         });

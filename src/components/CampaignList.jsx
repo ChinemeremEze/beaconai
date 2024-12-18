@@ -18,7 +18,6 @@ export default function CampaignList() {
     if (isLoading) return <p>Loading...</p>;
     if (error) return <p>Error: {error.message}</p>;
 
-    console.log(data)
     return (
         <div>
         <h3 className="text-xl font-semibold mb-4">Your Campaigns</h3>

@@ -54,7 +54,7 @@ export default function Profile() {
   if (!isAuthenticated) {
     return <div className="container mx-auto px-4 py-16 text-center">Please log in to view this page.</div>;
   }
-console.log(campaigns)
+
   if (campaigns){
     filteredCampaigns = campaigns.filter(campaign => {
       if (activeTab === 'all') return true
