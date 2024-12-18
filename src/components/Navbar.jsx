@@ -112,8 +112,8 @@ export function Navbar() {
       <div className="sm:hidden">
         <div className="px-2 pt-2 pb-3 space-y-1">
           <Link to="/about" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-pink-600 hover:bg-pink-50">About</Link>
-          <Link to="/features" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-pink-600 hover:bg-pink-50">Features</Link>
-          <Link to="/pricing" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-pink-600 hover:bg-pink-50">Pricing</Link>
+          <Link to="/how-it-works" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-pink-600 hover:bg-pink-50">How it Works</Link>
+          {/* <Link to="/pricing" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-pink-600 hover:bg-pink-50">Pricing</Link> */}
           {isAuthenticated && (
             <Link to="/profile" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-pink-600 hover:bg-pink-50">Profile</Link>
           )}
